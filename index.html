@@ -25,17 +25,22 @@
             <form action="javascript:addBookToLibrary()" id="my-form">
                 <div>
                     <label for="title">Title</label>
-                    <input type="text" name="title" id="title" placeholder="Title">
+                    <input type="text" name="title" id="title" placeholder="Title" required>
                 </div>
 
                 <div>
                     <label for="author">Author</label>
-                    <input type="text" name="author" id="author" placeholder="Author">
+                    <input type="text" name="author" id="author" placeholder="Author" required>
                 </div>
 
                 <div>
                     <label for="pages">Number of Pages</label>
-                    <input type="number" name="pages" id="pages" placeholder="Pages">
+                    <input type="number" name="pages" id="pages" placeholder="Pages" required>
+                </div>
+
+                <div>
+                    <label for="bookCover">Book Cover (Not Required)</label>
+                    <input type="url" name="bookCover" id="bookCover">
                 </div>
 
                 <div class="bool-read">
@@ -48,100 +53,7 @@
         </div>
 
         <div class="libraryArea">
-            <div class="card">
-                <p>Title</p>
-                <p>Book Title</p>
-                <p>Author</p>
-                <p>Book Author</p>
-                <img class="cover" src="placeholder.png" alt="Book Cover">
-                <p>Pages</p>
-                <p>Number</p>
-                <p>Read</p>
-            </div>
 
-
-            <div class="card">
-                <p>Title</p>
-                <p>Book Title</p>
-                <p>Author</p>
-                <p>Book Author</p>
-                <img class="cover" src="placeholder.png" alt="Book Cover">
-                <p>Pages</p>
-                <p>Number</p>
-                <p>Read</p>
-            </div><div class="card">
-                <p>Title</p>
-                <p>Book Title</p>
-                <p>Author</p>
-                <p>Book Author</p>
-                <img class="cover" src="placeholder.png" alt="Book Cover">
-                <p>Pages</p>
-                <p>Number</p>
-                <p>Read</p>
-            </div><div class="card">
-                <p>Title</p>
-                <p>Book Title</p>
-                <p>Author</p>
-                <p>Book Author</p>
-                <img class="cover" src="placeholder.png" alt="Book Cover">
-                <p>Pages</p>
-                <p>Number</p>
-                <p>Read</p>
-            </div><div class="card">
-                <p>Title</p>
-                <p>Book Title</p>
-                <p>Author</p>
-                <p>Book Author</p>
-                <img class="cover" src="placeholder.png" alt="Book Cover">
-                <p>Pages</p>
-                <p>Number</p>
-                <p>Read</p>
-            </div><div class="card">
-                <p>Title</p>
-                <p>Book Title</p>
-                <p>Author</p>
-                <p>Book Author</p>
-                <img class="cover" src="placeholder.png" alt="Book Cover">
-                <p>Pages</p>
-                <p>Number</p>
-                <p>Read</p>
-            </div><div class="card">
-                <p>Title</p>
-                <p>Book Title</p>
-                <p>Author</p>
-                <p>Book Author</p>
-                <img class="cover" src="placeholder.png" alt="Book Cover">
-                <p>Pages</p>
-                <p>Number</p>
-                <p>Read</p>
-            </div><div class="card">
-                <p>Title</p>
-                <p>Book Title</p>
-                <p>Author</p>
-                <p>Book Author</p>
-                <img class="cover" src="placeholder.png" alt="Book Cover">
-                <p>Pages</p>
-                <p>Number</p>
-                <p>Read</p>
-            </div><div class="card">
-                <p>Title</p>
-                <p>Book Title</p>
-                <p>Author</p>
-                <p>Book Author</p>
-                <img class="cover" src="placeholder.png" alt="Book Cover">
-                <p>Pages</p>
-                <p>Number</p>
-                <p>Read</p>
-            </div><div class="card">
-                <p>Title</p>
-                <p>Book Title</p>
-                <p>Author</p>
-                <p>Book Author</p>
-                <img class="cover" src="placeholder.png" alt="Book Cover">
-                <p>Pages</p>
-                <p>Number</p>
-                <p>Read</p>
-            </div>
         </div>
     </div>
 </body>

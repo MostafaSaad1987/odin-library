@@ -38,7 +38,8 @@ header {
     grid-row: 2 / -1;
 
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, auto));
+    grid-template-columns: repeat(auto-fit, minmax(350px, 0.25fr));
+    grid-auto-rows: 550px;
     gap: 25px;
     padding: 25px;
 }
@@ -95,5 +96,9 @@ input {
 
 .cover {
     height: 250px;
-    aspect-ratio: 9/16;
+    aspect-ratio: 6/9;
+}
+
+.small-text {
+    font-size: small;
 }
