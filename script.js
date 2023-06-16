@@ -88,10 +88,7 @@ function createCard(enteredBook) {
     let coverImage = document.createElement('img');
     coverImage.classList = "cover";
 
-    if (enteredBook.image == null || enteredBook.image == "" || !isImage(enteredBook.image)) {
-        coverImage.src = "placeholder.png";
-        coverImage.style.opacity = "0";
-    } else {
+    if (enteredBook.image != null && enteredBook.image != "" && isImage(enteredBook.image)) {
         coverImage.src = enteredBook.image;
     }
 
@@ -116,16 +113,19 @@ function createCard(enteredBook) {
 
 
     let readText = document.createElement('p');
-    readText.textContent = "Read";
     readText.style.color = "white";
+    readText.classList = "readText";
 
     let readContainer = document.createElement('div');
     if (enteredBook.read) {
         readContainer.style.backgroundColor = "green";
+        readText.textContent = "Read";
     } else {
         readContainer.style.backgroundColor = "red";
+        readText.textContent = "Not Read";
     }
 
+    readContainer.style.padding = "5px";
     readContainer.appendChild(readText);
     newBook.appendChild(readContainer);
 

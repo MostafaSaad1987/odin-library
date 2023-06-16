@@ -1,5 +1,7 @@
 body {
     margin: 0;
+
+    font-family: 'Bebas Neue', sans-serif;
 }
 
 .container {
@@ -16,7 +18,7 @@ body {
 
     padding: 1rem;
 
-    background-color: aliceblue;
+    background-color: #e3f6f5;
 }
 
 header {
@@ -28,9 +30,15 @@ header {
     flex-wrap: wrap;
     align-content: center;
 
-    background-color: #ccc;
+    background-color: #272343;
+
+    color: white;
 
     padding: 0 32px;
+}
+
+header>p {
+    font-size: 1.5em;
 }
 
 .libraryArea {
@@ -42,6 +50,7 @@ header {
     grid-auto-rows: 550px;
     gap: 25px;
     padding: 25px;
+    background-color: #bae8e8;
 }
 
 input {
@@ -86,9 +95,7 @@ input {
 }
 
 .card {
-    background-color: ghostwhite;
-    display: grid;
-    justify-content: center;
+    background-color: white;
     text-align: center;
     border: solid black 2px;
     border-radius: 6px;
@@ -101,4 +108,14 @@ input {
 
 .small-text {
     font-size: small;
+    font-family: 'Figtree', sans-serif;
+}
+
+p {
+    font-size: large;
+}
+
+.readText {
+    font-size: small;
+    margin: 0;
 }
