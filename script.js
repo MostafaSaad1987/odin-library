@@ -1,10 +1,11 @@
 class Book {
-    constructor(title, author, noOfPages, read, image) {
+    constructor(title, author, noOfPages, read, image, bookID) {
         this.title = title;
         this.author = author;
         this.noOfPages = noOfPages;
         this.read = read;
         this.image = image;
+        this.bookID = bookID;
     }
 }
 
@@ -23,6 +24,8 @@ Book.prototype.toggleRead = function () {
     this.read = !this.read;
 }
 
+let counter = 1;
+
 let library = [];
 
 const addButton = document.querySelector("#add-button");
@@ -36,8 +39,10 @@ const libraryArea = document.querySelector(".libraryArea")
 const imgSource = document.querySelector("#bookCover");
 
 function addBookToLibrary() {
-    let newBook = new Book(addTitle.value, addAuthor.value, addPages.value, hasBeenRead.checked, imgSource.value);
+    let newBook = new Book(addTitle.value, addAuthor.value, addPages.value, hasBeenRead.checked, imgSource.value, counter);
     library.push(newBook);
+
+    counter++;
 
     removeAllChildNodes(libraryArea);
     printBooks();
@@ -131,7 +136,38 @@ function createCard(enteredBook) {
 
 
 
+    let deleteButton = document.createElement('button');
+    deleteButton.id = "delete-button";
+    deleteButton.textContent = "Delete";
+
+    let readButton = document.createElement('button');
+    readButton.id = "read-button";
+    readButton.textContent = "Read";
+
+    let buttonContainer = document.createElement('div');
+    buttonContainer.classList = "button-container";
+
+    buttonContainer.appendChild(deleteButton);
+    buttonContainer.appendChild(readButton);
+
+    newBook.appendChild(buttonContainer);
+
+
+    newBook.id = enteredBook.bookID;
+
+
     libraryArea.appendChild(newBook);
+
+}
+
+function deleteBook(e) {
+    let bookToBeDeleted = library.find(x => x.bookID == e);
+    library.splice(library.indexOf(bookToBeDeleted), 1);
+}
+
+function readBook(e) {
+    let bookToBeRead = library.find(x => x.bookID == e);
+    bookToBeRead.toggleRead();
 }
 
 function isImage(url) {
@@ -144,15 +180,22 @@ function removeAllChildNodes(parent) {
     }
 }
 
+document.body.addEventListener('click', function (event) {
+    if (event.target.id == 'read-button') {
+        readBook(event.target.parentNode.parentNode.id);
+
+        removeAllChildNodes(libraryArea);
+        printBooks();
+    } else if (event.target.id == 'delete-button') {
+        deleteBook(event.target.parentNode.parentNode.id);
+
+        removeAllChildNodes(libraryArea);
+        printBooks();
+    };
+});
+
 /*
 Add a “NEW BOOK” button that brings up a form allowing users to input the details for
 the new book: author, title, number of pages, whether it’s been read and anything else
 you might want.
-
-Add a button on each book’s display to remove the book from the library.
-
-You will need to associate your DOM elements with the actual book objects in some way.
-One easy solution is giving them a data-attribute that corresponds to the index of the library array.
-
-Add a button on each book’s display to change its read status.
 */
