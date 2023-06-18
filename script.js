@@ -210,9 +210,3 @@ function closeForm() {
     popUpForm.style.display = "none";
     formFocus.style.display = "none";
 }
-
-/*
-Add a “NEW BOOK” button that brings up a form allowing users to input the details for
-the new book: author, title, number of pages, whether it’s been read and anything else
-you might want.
-*/
