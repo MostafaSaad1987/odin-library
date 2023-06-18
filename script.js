@@ -47,7 +47,7 @@ function addBookToLibrary() {
     removeAllChildNodes(libraryArea);
     printBooks();
 
-    bookForm.reset();
+    closeForm();
 }
 
 function printBooks() {
@@ -157,7 +157,6 @@ function createCard(enteredBook) {
 
 
     libraryArea.appendChild(newBook);
-
 }
 
 function deleteBook(e) {
@@ -191,8 +190,26 @@ document.body.addEventListener('click', function (event) {
 
         removeAllChildNodes(libraryArea);
         printBooks();
+    } else if (event.target.id == "formFocus") {
+        closeForm();
     };
 });
+
+const popUpForm = document.querySelector(".bookForm");
+const addBookButton = document.querySelector(".addBook");
+const formFocus = document.querySelector("#formFocus");
+
+addBookButton.addEventListener("click", function () {
+    popUpForm.style.display = "block";
+    formFocus.style.display = "block";
+});
+
+function closeForm() {
+    bookForm.reset();
+
+    popUpForm.style.display = "none";
+    formFocus.style.display = "none";
+}
 
 /*
 Add a “NEW BOOK” button that brings up a form allowing users to input the details for
