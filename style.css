@@ -25,10 +25,7 @@ header {
     grid-column: 1 / -1;
     grid-row: 1 / 2;
 
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    align-content: center;
+    text-align: center;
 
     background-color: #272343;
 
@@ -168,4 +165,12 @@ p {
 #delete-button:active,
 #unread-button:active {
     background-color: #8f0000;
+}
+
+.card {
+    transition: all .2s ease-in-out;
+}
+
+.card:hover {
+    transform: scale(1.025);
 }

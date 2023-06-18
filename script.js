@@ -142,7 +142,7 @@ function createCard(enteredBook) {
 
     let readButton = document.createElement('button');
     readButton.id = "read-button";
-    readButton.textContent = "Read";
+    readButton.textContent = "Toggle Read";
 
     let buttonContainer = document.createElement('div');
     buttonContainer.classList = "button-container";
