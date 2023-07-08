@@ -7,20 +7,20 @@ class Book {
         this.image = image;
         this.bookID = bookID;
     }
-}
 
-Book.prototype.info = function () {
-    let tempRead = '';
-    if (this.read) {
-        tempRead = "done reading";
-    } else {
-        tempRead = "not read yet";
+    info() {
+        let tempRead = '';
+        if (this.read) {
+            tempRead = "done reading";
+        } else {
+            tempRead = "not read yet";
+        }
+        return `${this.title} by ${this.author}, ${this.noOfPages} pages, ${tempRead}`;
     }
-    return `${this.title} by ${this.author}, ${this.noOfPages} pages, ${tempRead}`;
-}
 
-Book.prototype.toggleRead = function () {
-    this.read = !this.read;
+    toggleRead() {
+        this.read = !this.read;
+    }
 }
 
 // This is used to give a newly added book a unique ID.
