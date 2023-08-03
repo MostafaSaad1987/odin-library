@@ -118,6 +118,9 @@ input {
     border-radius: 6px;
 
     position: relative;
+
+    max-height: 523px;
+    max-width: 425px;
 }
 
 .cover {

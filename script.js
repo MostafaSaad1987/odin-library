@@ -144,6 +144,9 @@ function createCard(enteredBook) {
     }
 
     readContainer.style.padding = "5px";
+    readContainer.style.borderRadius = "4px";
+    readContainer.style.borderTopLeftRadius = "0";
+    readContainer.style.borderTopRightRadius = "0";
     readContainer.appendChild(readText);
     newBook.appendChild(readContainer);
 
